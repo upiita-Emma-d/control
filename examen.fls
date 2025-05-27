@@ -185,6 +185,43 @@ INPUT C:\Program Files\MiKTeX\tex\latex\environ\environ.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\environ\environ.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\trimspaces\trimspaces.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\trimspaces\trimspaces.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tcolorbox\tcbbreakable.code.tex
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\pdfcol\pdfcol.sty
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\pdfcol\pdfcol.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\color.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tcolorbox\tcbskins.code.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Users\XMK3585\AppData\Roaming\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\tcolorbox\tcbskinsjigsaw.code.tex
 INPUT C:\Program Files\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\amsmath\amsopn.sty
@@ -280,6 +317,11 @@ INPUT .\diagrama_de_bloques.png
 INPUT .\diagrama_de_bloques.png
 INPUT .\diagrama_de_bloques.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\base\ulasy.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\latex-fonts\lasy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT examen.aux
 INPUT .\examen.out
@@ -312,3 +354,7 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\latxfont\lasy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\latxfont\lasy10.pfb

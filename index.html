@@ -1199,7 +1199,7 @@
                 <div class="solution-step">
                     <p>Utilizando los parámetros del sistema y las ecuaciones derivadas, calculamos \(K_2\) y \(V_r\).</p>
                     <button onclick="calculateProblem3()" class="calc-button">🧮 Calcular Ganancia K₂ y Vᵣ</button>
-                    <button onclick="downloadLatexP3()" class="sim-button" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); margin-left:10px;">📄 Descargar LaTeX</button>
+                    <button onclick="downloadExamPDF()" class="sim-button" style="background: linear-gradient(135deg, #28a745 0%, #218838 100%); margin-left:10px;">📄 Descargar Examen PDF</button>
                     <div class="output" id="p3_output" style="margin-top:15px;">Presione el botón para ver los resultados.</div>
                 </div>
             </div>
@@ -1556,156 +1556,16 @@
                 }
             };
 
-            window.downloadLatexP3 = function() {
-                try {
-                    const SR_desired_val = P3_PARAMS.SR_desired;
-                    const Ra_val = MOTOR_PARAMS.Ra;
-                    const Keff_val = CALCULATED_VALUES.Keff;
-                    const K1_val = CONTROL_PARAMS.K1;
-                    const TL_spec_val = CALCULATED_VALUES.TL_spec;
-                    const omega_nom_val = CALCULATED_VALUES.omega_nom_rad_s;
-
-                    // Re-calcular K2 y Vr para asegurar consistencia, o tomarlos de un estado si ya están calculados
-                    const term_frac_K2_val = (200 * Ra_val * TL_spec_val) / omega_nom_val;
-                    const numerator_K2_val = term_frac_K2_val - (Keff_val * Keff_val);
-                    const denominator_K2_val = Keff_val * K1_val;
-                    if (denominator_K2_val === 0 || numerator_K2_val <= 0) {
-                        alert("No se pueden generar datos LaTeX porque K2 no es calculable o no es positivo con los parámetros actuales.");
-                        return;
-                    }
-                    const K2_calc_val = numerator_K2_val / denominator_K2_val;
-                    const den_Vr_val = Keff_val * K2_calc_val;
-                     if (den_Vr_val === 0) {
-                        alert("No se pueden generar datos LaTeX porque Vr no es calculable con el K2 obtenido.");
-                        return;
-                    }
-                    const Vr_calc_val = (201 * Ra_val * TL_spec_val) / den_Vr_val;
-
-                    const Dcl_s0_p3_val = (Keff_val * Keff_val) + (Keff_val * K1_val * K2_calc_val);
-                    const omega_NL_check_val = (Keff_val * K2_calc_val * Vr_calc_val) / Dcl_s0_p3_val;
-                    const omega_FL_check_val = (Keff_val * K2_calc_val * Vr_calc_val - Ra_val * TL_spec_val) / Dcl_s0_p3_val;
-                    const SR_check_val = (omega_NL_check_val - omega_FL_check_val) / omega_FL_check_val;
-
-                    const latexContent = `
-% --- Problema 3: Diseño de Ganancia para Regulación de Velocidad ---
-\\documentclass{article}
-\\usepackage{amsmath}
-\\usepackage{amsfonts}
-\\usepackage{amssymb}
-\\usepackage{graphicx}
-\\usepackage{geometry}
-\\geometry{a4paper, margin=1in}
-\\usepackage[utf8]{inputenc}
-
-\\title{Solución del Problema 3: Diseño de Ganancia del Convertidor}
-\\author{Sistema Interactivo de Control de Motores}
-\\date{\\today}
-
-\\begin{document}
-\\maketitle
-
-\\section*{Enunciado del Problema}
-El motor del problema 2 se controla con un convertidor lineal de ganancia \\(K_2\\), en lazo cerrado. Si la amplificación del sensor de velocidad es \\(K_1 = 4\\) mV/rad/s. Determinar la ganancia \\(K_2\\) del convertidor para limitar la regulación de velocidad a 0.5\\% a plena carga.
-
-\\section*{Parámetros del Sistema}
-Se utilizan los siguientes parámetros del sistema:
-\\begin{itemize}
-    \\item Momento de inercia, \\(J = ${MOTOR_PARAMS.J.toFixed(3)}\\) kg\\(\\cdot\\)m²
-    \\item Resistencia de armadura, \\(R_a = ${MOTOR_PARAMS.Ra.toFixed(3)}\\) \\(\\Omega\\)
-    \\item Inductancia de armadura, \\(L_a = ${MOTOR_PARAMS.La.toFixed(3)}\\) H
-    \\item Constante efectiva del motor, \\(K_{eff} = ${CALCULATED_VALUES.Keff.toFixed(3)}\\) V\\(\\cdot\\)s/rad
-    \\item Par de carga nominal, \\(T_{L,spec} = ${CALCULATED_VALUES.TL_spec.toFixed(2)}\\) N\\(\\cdot\\)m
-    \\item Velocidad nominal, \\(\\omega_{nom} = ${CALCULATED_VALUES.omega_nom_rad_s.toFixed(2)}\\) rad/s
-    \\item Ganancia del sensor de velocidad, \\(K_1 = ${CONTROL_PARAMS.K1.toFixed(4)}\\) V/(rad/s)
-    \\item Regulación de velocidad deseada, \\(SR_{des} = ${(P3_PARAMS.SR_desired * 100).toFixed(1)}\\% = ${P3_PARAMS.SR_desired}\\)
-\\end{itemize}
-
-\\section*{Marco Teórico y Metodología}
-
-\\subsection*{Ecuaciones Fundamentales en Estado Estacionario}
-La velocidad del motor en estado estacionario (\\(s \\to 0\\)) es:
-\\begin{align*}
-    \\omega_{ss} &= H_{vr}(0) V_r + H_{TL}(0) T_L \\\\
-    H_{vr}(0) &= \\frac{K_{eff}K_2}{K_{eff}^2 + K_{eff}K_1K_2} \\\\
-    H_{TL}(0) &= \\frac{-R_a}{K_{eff}^2 + K_{eff}K_1K_2}
-\\end{align*}
-Sustituyendo, obtenemos:
-\\begin{equation}
-    \\omega_{ss}(V_r, T_L, K_2) = \\frac{K_{eff}K_2 V_r - R_a T_L}{K_{eff}^2 + K_{eff}K_1K_2}
-\\end{equation}
-
-\\subsection*{Definición de Regulación de Velocidad (SR)}
-La regulación de velocidad se define como:
-\\begin{equation}
-    SR = \\frac{\\omega_{NL} - \\omega_{FL}}{\\omega_{FL}}
-\\end{equation}
-Donde:
-\\begin{itemize}
-    \\item \\(\\omega_{NL} = \\omega_{ss}(V_r, 0, K_2) = \\frac{K_{eff}K_2 V_r}{K_{eff}^2 + K_{eff}K_1K_2}\\) (Velocidad sin carga)
-    \\item \\(\\omega_{FL} = \\omega_{ss}(V_r, T_{L,spec}, K_2) = \\frac{K_{eff}K_2 V_r - R_a T_{L,spec}}{K_{eff}^2 + K_{eff}K_1K_2}\\) (Velocidad a plena carga)
-\\end{itemize}
-
-\\subsection*{Derivación de la Ganancia \\(K_2\\)}
-La diferencia de velocidad \\(\\Delta\\omega = \\omega_{NL} - \\omega_{FL}\\) es:
-\\begin{equation}
-    \\Delta\\omega = \\frac{R_a T_{L,spec}}{K_{eff}^2 + K_{eff}K_1K_2}
-\\end{equation}
-Sustituyendo \\(\\Delta\\omega\\) en la ecuación de \\(SR\\) y asumiendo \\(\\omega_{FL} = \\omega_{nom}\\) para la regulación deseada a plena carga:
-\\begin{align*}
-    K_{eff}^2 + K_{eff}K_1K_2 &= \\frac{R_a T_{L,spec}}{SR \\cdot \\omega_{nom}} \\\\
-    K_{eff}K_1K_2 &= \\frac{R_a T_{L,spec}}{SR \\cdot \\omega_{nom}} - K_{eff}^2
-\\end{align*}
-Dado que \\(SR = ${P3_PARAMS.SR_desired}\\), entonces \\(1/SR = ${1/P3_PARAMS.SR_desired}\\). La ecuación para \\(K_2\\) es:
-\\begin{equation}
-    \\boxed{K_2 = \\frac{1}{K_{eff}K_1} \\left( \\frac{${(1/P3_PARAMS.SR_desired).toFixed(0)} \\cdot R_a T_{L,spec}}{\\omega_{nom}} - K_{eff}^2 \\right)}
-\\end{equation}
-
-\\subsection*{Determinación del Voltaje de Referencia \\(V_r\\)}
-El voltaje de referencia \\(V_r\\) se ajusta para que \\(\\omega_{FL} = \\omega_{nom}\\). De la definición de \\(SR\\), \\(\\omega_{NL} = (1+SR)\\omega_{FL}\\). Manipulando las expresiones, llegamos a:
-\\begin{equation}
-    SR \\cdot K_{eff} K_2 V_r = R_a T_{L,spec} (1+SR)
-\\end{equation}
-Despejando \\(V_r\\) y sabiendo que \\((1+SR)/SR = ${(1+P3_PARAMS.SR_desired)/P3_PARAMS.SR_desired}\\):
-\\begin{equation}
-    \\boxed{V_r = \\frac{${((1+P3_PARAMS.SR_desired)/P3_PARAMS.SR_desired).toFixed(0)} \\cdot R_a T_{L,spec}}{K_{eff} K_2}}
-\\end{equation}
-
-\\section*{Resultados Numéricos}
-Sustituyendo los valores de los parámetros:
-\\begin{itemize}
-    \\item Término \\(\\left( \\frac{${(1/P3_PARAMS.SR_desired).toFixed(0)} \\cdot R_a T_{L,spec}}{\\omega_{nom}} \\right) = ${term_frac_K2_val.toFixed(4)}\\)
-    \\item Término \\(K_{eff}^2 = ${(Keff_val * Keff_val).toFixed(4)}\\)
-    \\item Numerador para \\(K_2 = ${numerator_K2_val.toFixed(4)}\\)
-    \\item Denominador para \\(K_2 (K_{eff} \\cdot K_1) = ${denominator_K2_val.toFixed(5)}\\)
-    \\item \\textbf{Ganancia del Convertidor Calculada, \\(K_2 = ${K2_calc_val.toFixed(3)}\)}
-    \\item \\textbf{Voltaje de Referencia Calculado, \\(V_r = ${Vr_calc_val.toFixed(3)}\\) V}
-\\end{itemize}
-
-\\section*{Verificación}
-Con los valores calculados de \\(K_2\\) y \\(V_r\\):
-\\begin{itemize}
-    \\item Velocidad sin carga, \\(\\omega_{NL} = ${omega_NL_check_val.toFixed(3)}\\) rad/s
-    \\item Velocidad a plena carga, \\(\\omega_{FL} = ${omega_FL_check_val.toFixed(3)}\\) rad/s (Objetivo: \\(\\approx ${omega_nom_val.toFixed(3)}\\) rad/s)
-    \\item Regulación de velocidad calculada, \\(SR_{calc} = \\frac{${omega_NL_check_val.toFixed(3)} - ${omega_FL_check_val.toFixed(3)}}{${omega_FL_check_val.toFixed(3)}} = ${(SR_check_val * 100).toFixed(3)}\\%\\) (Objetivo: \\(${(SR_desired_val*100).toFixed(1)}\\%\\))
-\\end{itemize}
-La pequeña diferencia en la regulación de velocidad se debe a la precisión de los decimales utilizados en los cálculos intermedios.
-
-\\end{document}
-                    `;
-
-                    const blob = new Blob([latexContent.trim()], { type: 'text/x-latex' });
-                    const link = document.createElement('a');
-                    link.href = URL.createObjectURL(blob);
-                    link.download = 'solucion_problema3.tex';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(link.href);
-                    console.log('📄 Archivo LaTeX para Problema 3 generado y descarga iniciada.');
-                } catch (e) {
-                    console.error("Error generando LaTeX para Problema 3:", e);
-                    alert("Error al generar el archivo LaTeX: " + e.message);
-                }
+            window.downloadExamPDF = function() {
+                // Esta función ahora asume que 'examen.pdf' está en la raíz del sitio.
+                // Crea un enlace temporal y simula un clic para descargar el archivo.
+                const link = document.createElement('a');
+                link.href = 'examen.pdf'; // Nombre del archivo PDF precompilado
+                link.download = 'examen.pdf'; // Nombre con el que se guardará
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                console.log('📄 Intento de descarga de examen.pdf iniciado.');
             };
 
             // Definición de plotStepResponse (simplificada de plotting.js) para simulateProblem2c

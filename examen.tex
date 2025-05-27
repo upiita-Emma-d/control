@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -33,7 +34,7 @@
     fonttitle=\bfseries,
     title=#1,
     sharp corners,
-    breakable,
+    breakable=true,
     enhanced,
     boxrule=1pt,
     left=4mm,
@@ -48,7 +49,7 @@
     fonttitle=\bfseries,
     title=#1,
     sharp corners,
-    breakable,
+    breakable=true,
     enhanced,
     boxrule=1pt,
     left=4mm,
@@ -64,7 +65,7 @@
     fonttitle=\bfseries,
     title=#1,
     sharp corners,
-    breakable,
+    breakable=true,
     enhanced,
     boxrule=1pt,
     left=4mm,
@@ -384,27 +385,40 @@ La función `window.calculateProblem3()` en `index.html` implementa las ecuacion
 Se verifica que $K_2 > 0$.\n
 
 \textbf{Cálculo de $V_r$:}
-\[ \mathbf{V_r} = \frac{201 \cdot R_a T_{L,spec}}{K_{eff} K_2} = \frac{201 \times 0.045 \times 47.75}{0.6775 \times 335.387} \approx \frac{431.90}{227.25} \approx \mathbf{1.89 Вайль} \]
+\[ \mathbf{V_r} = \frac{201 \cdot R_a T_{L,spec}}{K_{eff} K_2} = \frac{201 \times 0.045 \times 47.75}{0.6775 \times 335.385} \approx \frac{431.900625}{227.2513875} \approx \mathbf{1.8998 \text{ V}} \]
 
 \textbf{Verificación (usando los $K_2$ y $V_r$ calculados):}
 \begin{itemize}
-    \item $D_{cl,s0} = K_{eff}^2 + K_{eff}K_1K_2 = (0.6775)^2 + (0.6775 \times 0.004 \times 335.387) \approx 0.4590 + 0.9089 \approx 1.3679$
-    \item $\omega_{NL} = \frac{K_{eff}K_2 V_r}{D_{cl,s0}} = \frac{0.6775 \times 335.387 \times 1.899}{1.3679} \approx \frac{431.90}{1.3679} \approx 315.74$ rad/s
-    \item $\omega_{FL} = \frac{K_{eff}K_2 V_r - R_a T_{L,spec}}{D_{cl,s0}} = \frac{431.90 - (0.045 \times 47.75)}{1.3679} \approx \frac{431.90 - 2.14875}{1.3679} \approx \frac{429.75125}{1.3679} \approx 314.17$ rad/s
-    \item $SR_{calc} = \frac{315.74 - 314.17}{314.17} \approx \frac{1.57}{314.17} \approx 0.004997 \approx \mathbf{0.500\%}$
+    \item $D_{cl,s0} = K_{eff}^2 + K_{eff}K_1K_2 = (0.6775)^2 + (0.6775 \times 0.004 \times 335.385) \approx 0.45900625 + 0.9088838 \approx 1.36789005$
+    \item $\omega_{NL} = \frac{K_{eff}K_2 V_r}{D_{cl,s0}} = \frac{0.6775 \times 335.385 \times 1.8998}{1.36789005} \approx \frac{431.736}{1.36789005} \approx 315.630$ rad/s
+    \item $\omega_{FL} = \frac{K_{eff}K_2 V_r - R_a T_{L,spec}}{D_{cl,s0}} = \frac{431.736 - (0.045 \times 47.75)}{1.36789005} \approx \frac{431.736 - 2.14875}{1.36789005} \approx \frac{429.58725}{1.36789005} \approx 314.054$ rad/s
+    \item $SR_{calc} = \frac{315.630 - 314.054}{314.054} \approx \frac{1.576}{314.054} \approx 0.005018 \approx \mathbf{0.502\%}$
 \end{itemize}
-La regulación calculada coincide con la deseada (0.5\%), validando los valores de $K_2$ y $V_r$.
-La función `downloadLatexP3()` en la plataforma interactiva permite descargar esta solución en formato LaTeX.
+La regulación calculada (0.502\%) es muy cercana a la deseada (0.5\%). Las pequeñas discrepancias se deben al redondeo en los cálculos intermedios.\n
+La función `downloadExamPDF()` en `index.html` (anteriormente `downloadLatexP3`) permite descargar este examen completo, una vez compilado a PDF.\n
 
 \end{solutionbox}
 
 \newpage
-\section*{Referencias Generales}
-\begin{enumerate}[label=\arabic*.]
-    \item Fitzgerald, A. E., Kingsley, C., \& Umans, S. D. (2003). \textit{Máquinas eléctricas}. McGraw-Hill.
-    \item Rashid, M. H. (2013). \textit{Electrónica de potencia: circuitos, dispositivos y aplicaciones}. Pearson.
-    \item Dorf, R. C., \& Bishop, R. H. (2011). \textit{Sistemas de control moderno}. Pearson Prentice Hall.
-    \item Ogata, K. (2010). \textit{Ingeniería de control moderna}. (5ª ed.). Pearson Educación.
-\end{enumerate}
+\section*{Apéndice: Funciones JavaScript Clave de index.html}
+Una breve descripción de las funciones JavaScript referenciadas, implementadas en el bloque `<script type="module">` de `index.html`:\n
+\begin{itemize}
+    \item \texttt{window.calculateProblem2b()}: Calcula y muestra los coeficientes numéricos de las funciones de transferencia $H_{Vr}(s)$ y $H_{TL}(s)$ para el Problema 2, usando constantes de `js/constants.js`.\n
+    \item \texttt{window.calculateProblem2d()}: Calcula y muestra la velocidad en estado estacionario para el Problema 2 usando el Teorema del Valor Final y los coeficientes previamente calculados.\n
+    \item \texttt{window.calculateProblem3()}: Calcula la ganancia $K_2$ y el voltaje $V_r$ necesarios para cumplir con la especificación de regulación de velocidad del Problema 3. Muestra los resultados y una verificación.\n
+    \item \texttt{window.simulateSystemDynamics()}: Para el Problema 2a, simula la respuesta dinámica del motor a una entrada de referencia $V_r$, mostrando la velocidad angular $\omega(t)$ usando `createAdvancedStepResponse`.\n
+    \item \texttt{window.simulateProblem2c()}: Para el Problema 2c, simula las respuestas individuales a $V_r$ y $T_L$ y una respuesta total simplificada por superposición, usando `plotStepResponseForSim` (que a su vez usa `createAdvancedStepResponse`).\n
+    \item \texttt{window.downloadExamPDF()}: Inicia la descarga del archivo `examen.pdf` precompilado.\n
+    \item Funciones de `js/visualizations.js` (ej. `createAdvancedStepResponse`, `createPoleZeroPlot`): Encargadas de generar las gráficas interactivas en los elementos `<canvas>`.\n
+    \item Funciones de `js/calculations.js` (ej. `calculateTransferFunctionCoefficients`): Realizan cálculos fundamentales que son usados por las funciones globales en `index.html`.\n
+\end{itemize}\n
+
+\section*{Referencias Generales}\n
+\begin{enumerate}[label=\arabic*.]\n
+    \item Fitzgerald, A. E., Kingsley, C., \& Umans, S. D. (2003). \textit{Máquinas eléctricas}. McGraw-Hill.\n
+    \item Rashid, M. H. (2013). \textit{Electrónica de potencia: circuitos, dispositivos y aplicaciones}. Pearson.\n
+    \item Dorf, R. C., \& Bishop, R. H. (2011). \textit{Sistemas de control moderno}. Pearson Prentice Hall.\n
+    \item Ogata, K. (2010). \textit{Ingeniería de control moderna}. (5ª ed.). Pearson Educación.\n
+\end{enumerate}\n
 
 \end{document} 
