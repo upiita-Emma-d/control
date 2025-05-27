@@ -293,7 +293,6 @@ Dado que $\zeta \ll 1$, el sistema es significativamente subamortiguado, lo que 
 \subsubsection*{d) Cálculo de la Velocidad en Estado Estacionario}
 Se utiliza el Teorema del Valor Final: $\omega_{ss} = \lim_{s \to 0} s \Omega(s)$.
 Para una entrada escalón $V_r(s) = V_r/s$ y $T_L(s) = T_L/s$ (donde $V_r=1$V y $T_L=T_{L,spec}$):
-\[ \omega_{ss} = \lim_{s \to 0} H_{Vr}(s)V_r + \lim_{s \to 0} H_{TL}(s)T_L \]
 \[ \omega_{ss} = H_{Vr}(0)V_r + H_{TL}(0)T_L \]
 \begin{align*}
     H_{Vr}(0) &= \frac{K_{eff}K_2}{K_{eff}^2 + K_{eff}K_1K_2} = \frac{101.625}{0.8655} \approx 117.412 \text{ (rad/s)/V} \\\\
@@ -320,7 +319,7 @@ El motor del problema 2 se controla con un convertidor lineal de ganancia $K_2$,
 \begin{solutionbox}{Solución Detallada - Pregunta 3}
 
 \subsection*{Resumen Ejecutivo}
-El objetivo es diseñar la ganancia $K_2$ del convertidor para que el sistema de control del motor DC cumpla con una especificación de regulación de velocidad del 0.5\% a plena carga. Esto implica encontrar una $K_2$ que minimice la caída de velocidad cuando se aplica el par nominal, manteniendo la velocidad a plena carga en su valor nominal.
+El objetivo es diseñar la ganancia $K_2$ del convertidor para que el sistema de control del motor DC cumpla con una especificación de regulación de velocidad del 0.5\% a plena carga. Esto implica encontrar una $K_2$ que minimice la caída de velocidad cuando se aplica el par nominal, y asegurar que la velocidad a plena carga sea la velocidad nominal del motor.
 
 \subsection*{Parámetros del Sistema}
 Los parámetros del motor son los mismos que en el Problema 2. Adicionalmente:
@@ -329,10 +328,10 @@ Los parámetros del motor son los mismos que en el Problema 2. Adicionalmente:
     \item Regulación de velocidad deseada $SR_{des} = 0.5\% = 0.005$
     \item $K_{eff} \approx 0.6775$ V/(rad/s) o Nm/A
     \item $R_a = 0.045 \Omega$
-    \item $T_{L,spec} \approx 47.75$ N$\cdot$m
-    \item $\omega_{nom} \approx 314.16$ rad/s
+    \item $T_{L,spec} \approx 47.75$ N$\cdot$m (Par de carga nominal a plena carga)
+    \item $\omega_{nom} \approx 314.16$ rad/s (Velocidad nominal, se asume como $\omega_{FL}$ deseada)
 \end{itemize}
-Las incógnitas son $K_2$ y el $V_r$ asociado.
+Las incógnitas son la ganancia $K_2$ y el voltaje de referencia $V_r$ asociado.
 
 \subsection*{Marco Teórico y Metodología de Solución}
 
@@ -352,37 +351,37 @@ $(SR = \frac{\omega_{NL} - \omega_{FL}}{\omega_{FL}})$, donde $\omega_{NL}$ es l
 \subsubsection*{3. Derivación de la Ganancia $K_2$}
 La diferencia de velocidad $\Delta\omega = \omega_{NL} - \omega_{FL}$ es:
 \[ \Delta\omega = \frac{R_a T_{L,spec}}{K_{eff}^2 + K_{eff}K_1K_2} \]
-Sustituyendo en la ecuación de $SR_{des}$ y asumiendo que a plena carga, el motor opera a su velocidad nominal ($\omega_{FL} = \omega_{nom}$):
+Sustituyendo en la ecuación de $SR_{des}$ y estableciendo que la velocidad a plena carga debe ser la nominal, $\omega_{FL} = \omega_{nom}$:\n
 \[ SR_{des} = \frac{\Delta\omega}{\omega_{nom}} = \frac{R_a T_{L,spec} / (K_{eff}^2 + K_{eff}K_1K_2)}{\omega_{nom}} \]
-Despejando el término $(K_{eff}^2 + K_{eff}K_1K_2)$:
+Despejando el término $(K_{eff}^2 + K_{eff}K_1K_2)$:\n
 \[ K_{eff}^2 + K_{eff}K_1K_2 = \frac{R_a T_{L,spec}}{SR_{des} \cdot \omega_{nom}} \]
-Finalmente, despejando $K_2$ (y notando que $1/SR_{des} = 1/0.005 = 200$):
-\begin{equation}\label{eq:K2_calc}
+Finalmente, despejando $K_2$ (y notando que $1/SR_{des} = 1/0.005 = 200$):\n
+\begin{equation}\label{eq:K2_calc_p3}
     K_2 = \frac{1}{K_{eff}K_1} \left( \frac{R_a T_{L,spec}}{SR_{des} \cdot \omega_{nom}} - K_{eff}^2 \right) = \frac{1}{K_{eff}K_1} \left( \frac{200 \cdot R_a T_{L,spec}}{\omega_{nom}} - K_{eff}^2 \right)
 \end{equation}
 
 \subsubsection*{4. Determinación del Voltaje de Referencia $V_r$}
 El voltaje $V_r$ se ajusta para que $\omega_{FL} = \omega_{nom}$ con la $K_2$ calculada. De la definición de $SR$, $\omega_{NL} = (1+SR_{des})\omega_{FL} = (1+SR_{des})\omega_{nom}$.
-Sabemos que $\omega_{NL} - \omega_{FL} = SR_{des} \cdot \omega_{FL}$. También $\omega_{NL} - \omega_{FL} = \frac{R_a T_{L,spec}}{K_{eff}^2 + K_{eff}K_1K_2}$.
-Igualando con la expresión de $\omega_{NL}$ en términos de $V_r$:
-\[ SR_{des} \cdot K_{eff} K_2 V_r = R_a T_{L,spec} (1+SR_{des}) \]
-Despejando $V_r$ (y notando que $(1+SR_{des})/SR_{des} = 1.005/0.005 = 201$):
-\begin{equation}\label{eq:Vr_calc}
-    V_r = \frac{R_a T_{L,spec} (1+SR_{des})}{SR_{des} \cdot K_{eff} K_2} = \frac{201 \cdot R_a T_{L,spec}}{K_{eff} K_2}
+Usando la expresión de $\omega_{NL}$ en términos de $V_r$ y el denominador $D_{cl,s0} = K_{eff}^2 + K_{eff}K_1K_2 = \frac{R_a T_{L,spec}}{SR_{des} \cdot \omega_{nom}}$:\n
+\[ (1+SR_{des})\omega_{nom} = \frac{K_{eff}K_2 V_r}{R_a T_{L,spec} / (SR_{des} \cdot \omega_{nom})} = \frac{K_{eff}K_2 V_r \cdot SR_{des} \cdot \omega_{nom}}{R_a T_{L,spec}} \]
+\[ V_r = \frac{(1+SR_{des}) R_a T_{L,spec}}{SR_{des} \cdot K_{eff} K_2} \]
+Sustituyendo $(1+SR_{des})/SR_{des} = 1.005/0.005 = 201$:\n
+\begin{equation}\label{eq:Vr_calc_p3}
+    V_r = \frac{201 \cdot R_a T_{L,spec}}{K_{eff} K_2}
 \end{equation}
 
 \subsection*{Solución Numérica y Resultados}
-La función `calculateProblem3()` en la plataforma interactiva implementa las ecuaciones \eqref{eq:K2_calc} y \eqref{eq:Vr_calc}.
+La función `window.calculateProblem3()` en `index.html` implementa las ecuaciones \eqref{eq:K2_calc_p3} y \eqref{eq:Vr_calc_p3}. Los parámetros se cargan desde `js/constants.js`.\n
 
 \textbf{Cálculo de $K_2$:}
 \begin{itemize}
     \item Término $\left( \frac{200 \cdot R_a T_{L,spec}}{\omega_{nom}} \right) = \frac{200 \times 0.045 \times 47.75}{314.16} \approx \frac{429.75}{314.16} \approx 1.3679$
-    \item Término $K_{eff}^2 = (0.6775)^2 \approx 0.4590$
-    \item Numerador para $K_2 = 1.3679 - 0.4590 = 0.9089$
+    \item Término $K_{eff}^2 = (0.6775)^2 \approx 0.45900625$
+    \item Numerador para $K_2 = 1.3679 - 0.45900625 = 0.90889375$
     \item Denominador para $K_2 (K_{eff}K_1) = 0.6775 \times 0.004 = 0.00271$
-    \item $\mathbf{K_2} = \frac{0.9089}{0.00271} \approx \mathbf{335.387}$
+    \item $\mathbf{K_2} = \frac{0.90889375}{0.00271} \approx \mathbf{335.385}$
 \end{itemize}
-Es crucial verificar que $K_2 > 0$. En este caso, $1.3679 > 0.4590$, por lo que $K_2$ es positivo.
+Se verifica que $K_2 > 0$.\n
 
 \textbf{Cálculo de $V_r$:}
 \[ \mathbf{V_r} = \frac{201 \cdot R_a T_{L,spec}}{K_{eff} K_2} = \frac{201 \times 0.045 \times 47.75}{0.6775 \times 335.387} \approx \frac{431.90}{227.25} \approx \mathbf{1.89 Вайль} \]

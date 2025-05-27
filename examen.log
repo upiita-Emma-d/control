@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.5)  27 MAY 2025 09:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.5)  27 MAY 2025 09:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -516,8 +516,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box79
-)
-No file examen.aux.
+) (examen.aux)
 \openout1 = `examen.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -540,7 +539,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
 LaTeX Info: Redefining \. on input line 76.
 LaTeX Info: Redefining \% on input line 76.
-(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count319
 \scratchdimen=\dimen278
@@ -742,131 +741,194 @@ l.199 \begin{solutionbox}{
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.310 
+l.309 
        <./diagrama_de_bloques.png>]
-Overfull \vbox (1859.9038pt too high) has occurred while \output is active []
+Overfull \vbox (1835.0038pt too high) has occurred while \output is active []
 
  [4]
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:313: Package pgfkeys Error: I do not know the key '/tcb/breakable' and I am going to ignore it. Perhaps you misspelled it.
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:312: Package pgfkeys Error: I do not know the key '/tcb/breakable' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.313 \begin{problemstatementbox}{
+l.312 \begin{problemstatementbox}{
                                   Enunciado - Pregunta 3}
 (That was another \errmessage.)
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:313: Package pgfkeys Error: I do not know the key '/tcb/enhanced' and I am going to ignore it. Perhaps you misspelled it.
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:312: Package pgfkeys Error: I do not know the key '/tcb/enhanced' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.313 \begin{problemstatementbox}{
+l.312 \begin{problemstatementbox}{
                                   Enunciado - Pregunta 3}
 (That was another \errmessage.)
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:320: Package pgfkeys Error: I do not know the key '/tcb/breakable' and I am going to ignore it. Perhaps you misspelled it.
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:319: Package pgfkeys Error: I do not know the key '/tcb/breakable' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.320 \begin{solutionbox}{
+l.319 \begin{solutionbox}{
                           Solución Detallada - Pregunta 3}
 (That was another \errmessage.)
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:320: Package pgfkeys Error: I do not know the key '/tcb/enhanced' and I am going to ignore it. Perhaps you misspelled it.
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:319: Package pgfkeys Error: I do not know the key '/tcb/enhanced' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.320 \begin{solutionbox}{
+l.319 \begin{solutionbox}{
                           Solución Detallada - Pregunta 3}
 (That was another \errmessage.)
 
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:354: Undefined control sequence.
+l.354 ... nominal, $\omega_{FL} = \omega_{nom}$:\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Reference `eq:K2_calc' on page 5 undefined on input line 375.
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:356: Undefined control sequence.
+l.356 ...término $(K_{eff}^2 + K_{eff}K_1K_2)$:\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:358: Undefined control sequence.
+l.358 ...ando que $1/SR_{des} = 1/0.005 = 200$):\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:365: Undefined control sequence.
+l.365 ...L,spec}}{SR_{des} \cdot \omega_{nom}}$:\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:368: Undefined control sequence.
+l.368 ...R_{des})/SR_{des} = 1.005/0.005 = 201$:\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:Vr_calc' on page 5 undefined on input line 375.
+LaTeX Warning: Reference `eq:K2_calc_p3' on page 5 undefined on input line 374.
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:388: LaTeX Error: Unicode character В (U+0412)
+LaTeX Warning: Reference `eq:Vr_calc_p3' on page 5 undefined on input line 374.
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:374: Undefined control sequence.
+l.374 ...tros se cargan desde `js/constants.js`.\n
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:384: Undefined control sequence.
+l.384 Se verifica que $K_2 > 0$.\n
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:387: LaTeX Error: Unicode character В (U+0412)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.388 ...{227.25} \approx \mathbf{1.89 Вайль}
+l.387 ...{227.25} \approx \mathbf{1.89 Вайль}
                                                    \]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:388: LaTeX Error: Unicode character а (U+0430)
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:387: LaTeX Error: Unicode character а (U+0430)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.388 ...{227.25} \approx \mathbf{1.89 Вайль}
+l.387 ...{227.25} \approx \mathbf{1.89 Вайль}
                                                    \]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:388: LaTeX Error: Unicode character й (U+0439)
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:387: LaTeX Error: Unicode character й (U+0439)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.388 ...{227.25} \approx \mathbf{1.89 Вайль}
+l.387 ...{227.25} \approx \mathbf{1.89 Вайль}
                                                    \]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:388: LaTeX Error: Unicode character л (U+043B)
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:387: LaTeX Error: Unicode character л (U+043B)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.388 ...{227.25} \approx \mathbf{1.89 Вайль}
+l.387 ...{227.25} \approx \mathbf{1.89 Вайль}
                                                    \]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:388: LaTeX Error: Unicode character ь (U+044C)
+c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex:387: LaTeX Error: Unicode character ь (U+044C)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.388 ...{227.25} \approx \mathbf{1.89 Вайль}
+l.387 ...{227.25} \approx \mathbf{1.89 Вайль}
                                                    \]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 [5]
-Overfull \vbox (971.2399pt too high) has occurred while \output is active []
+Overfull \vbox (989.23923pt too high) has occurred while \output is active []
 
  [6]
-Overfull \hbox (4.9238pt too wide) in paragraph at lines 405--406
+Overfull \hbox (4.9238pt too wide) in paragraph at lines 404--405
 []\OT1/cmr/m/n/12 Fitzgerald, A. E., Kings-ley, C., & Umans, S. D. (2003). \OT1/cmr/m/it/12 M^^Saqui-nas el^^Sectri-cas\OT1/cmr/m/n/12 . McGraw-
  []
 
@@ -895,15 +957,15 @@ Package rerunfilecheck Info: Checksums for `examen.out':
 (rerunfilecheck)             After:  464955E0C3E8F719FFB1279163189E64;702.
  ) 
 Here is how much of TeX's memory you used:
- 22269 strings out of 474486
- 408398 string characters out of 5753565
- 1975542 words of memory out of 5000000
- 44138 multiletter control sequences out of 15000+600000
+ 22272 strings out of 474486
+ 408493 string characters out of 5753565
+ 1974542 words of memory out of 5000000
+ 44139 multiletter control sequences out of 15000+600000
  568137 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,87p,1198b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\XMK3585\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on examen.pdf (7 pages, 238548 bytes).
+Output written on examen.pdf (7 pages, 238767 bytes).
 PDF statistics:
  197 PDF objects out of 1000 (max. 8388607)
  74 named destinations out of 1000 (max. 500000)

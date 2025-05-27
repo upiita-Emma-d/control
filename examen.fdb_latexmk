@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1748360698.65691 "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" "examen.pdf" "examen" 1748360699.60049 2
+["pdflatex"] 1748360841.42999 "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" "examen.pdf" "examen" 1748360842.54163 2
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -163,11 +163,11 @@
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/letltxmacro/letltxmacro.sty" 1575399536 5766 13a9e8766c47f30327caf893ece86ac8 ""
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
-  "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" 1748360697 29096 0094c477b407d8cde8797834ec20af06 ""
+  "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" 1748360840 29219 34c9e95459bb62788a6454ca08583773 ""
   "diagrama_de_bloques.png" 1747377768 24158 117a685884448159112b4c9fd93efeaf ""
-  "examen.aux" 1748360699 1210 18b8c90ff47c3e92f6e147f2245d2903 "pdflatex"
-  "examen.out" 1748360699 702 464955e0c3e8f719ffb1279163189e64 "pdflatex"
-  "examen.tex" 1748360697 29096 0094c477b407d8cde8797834ec20af06 ""
+  "examen.aux" 1748360842 1216 0b812a7f64c1f78c945aef5eebb983de "pdflatex"
+  "examen.out" 1748360842 702 464955e0c3e8f719ffb1279163189e64 "pdflatex"
+  "examen.tex" 1748360840 29219 34c9e95459bb62788a6454ca08583773 ""
   (generated)
   "examen.aux"
   "examen.log"
