@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1748361393.47407 "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" "examen.pdf" "examen" 1748361394.61681 2
+["pdflatex"] 1748374437.60708 "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" "examen.pdf" "examen" 1748374438.75431 2
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -185,11 +185,11 @@
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/tikzfill/tikzfill-common.sty" 1691489948 2573 42712c9e0a2df004e43df5b3c95f0c1e ""
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/tikzfill/tikzfill.image.sty" 1691489948 1120 ba535da48caa03bf1fd3f03ea87779f8 ""
   "C:/Users/XMK3585/AppData/Roaming/MiKTeX/tex/latex/tikzfill/tikzlibraryfill.image.code.tex" 1691489948 10931 717eb52299f416934beb8b2b7cd8cee6 ""
-  "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" 1748361392 31278 1c0155b02854d2d6c13b76466b7e79e7 ""
+  "c:/Users/XMK3585/PersonalDevelopments/Control/examen.tex" 1748374396 31258 6e2e7a5ca3d04828cdfd62b09873c114 ""
   "diagrama_de_bloques.png" 1747377768 24158 117a685884448159112b4c9fd93efeaf ""
-  "examen.aux" 1748361394 1220 b23d062946a29277f8e6b0dc355dba98 "pdflatex"
-  "examen.out" 1748361394 702 464955e0c3e8f719ffb1279163189e64 "pdflatex"
-  "examen.tex" 1748361392 31278 1c0155b02854d2d6c13b76466b7e79e7 ""
+  "examen.aux" 1748374438 1220 b23d062946a29277f8e6b0dc355dba98 "pdflatex"
+  "examen.out" 1748374438 702 464955e0c3e8f719ffb1279163189e64 "pdflatex"
+  "examen.tex" 1748374396 31258 6e2e7a5ca3d04828cdfd62b09873c114 ""
   (generated)
   "examen.aux"
   "examen.log"
